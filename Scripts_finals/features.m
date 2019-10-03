@@ -1,0 +1,37 @@
+function y = features(x)
+n=length(x);
+y=zeros(1,32);
+
+y(1)=sum(abs(x)); % Area under the curve
+y(2)=mean(abs(x)); % Mean
+y(3)=rms(x); % Root mean square
+y(4)=VAR(x); % Variance 
+y(5)=std(x); % Standard Deviation
+y(6)=wentropy(x,'log energy'); % Log energy entropy
+y(7)=sum(x.^2); % Square integral
+y(8)=kurtosis(x); % Kurtosis
+y(9)=cov(x); % Covariance 
+y(10)=wentropy(x,'shannon'); % Shannon entropy
+y(11)=AAC(x); % Average Amplitud Change 
+y(12)= sqrt(sum(abs(x).^2)); % Root Sum of Squares RSSQ
+y(13) = sum((abs(x)).^2); % Simple Square Integral SSI 
+y(14) = sum((abs(x)).^2)/n; % Simple Square Integral II SSI2 (Potrncia)
+y(15) = VEEG(x);  % calculate the Variance of EEG (VAR)
+y(16) = AsDec(x);
+y(17) = CorPeakNumber(x);
+y(18) = Energy1_3Cor(x);
+y(19) = Energy2_3Cor(x);
+y(20) = int_ratio(x);
+y(21) = KurtoEnv(x);
+y(22) = KurtoSig(x);
+y(23) = MaxFFT(x);
+y(24) = MeanFFT(x);
+y(25) = MedianFFT(x);
+y(26) = RappMaxMean(x);
+y(27) = RappMaxMedian(x);        
+y(28) = SkewEnv(x);
+y(29) = SkewSig(x);
+y(30) = VarFFT(x);
+y(31) = median(x); % Median
+y(32) = entropy(x); % Entropy   
+end
